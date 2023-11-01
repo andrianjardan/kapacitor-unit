@@ -1,14 +1,20 @@
 module github.com/DreadPirateShawn/kapacitor-unit
 
-go 1.12
+go 1.21
 
 require (
-	github.com/PaesslerAG/gval v1.0.1
-	github.com/fatih/color v1.7.0
-	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
-	github.com/influxdata/influxdb1-client v0.0.0-20191209144304-8bf82d3c094d
-	github.com/mattn/go-colorable v0.1.2 // indirect
-	github.com/mattn/go-isatty v0.0.9 // indirect
-	gopkg.in/h2non/gock.v1 v1.0.15
-	gopkg.in/yaml.v2 v2.2.2
+	github.com/PaesslerAG/gval v1.2.2
+	github.com/fatih/color v1.15.0
+	github.com/golang/glog v1.1.2
+	github.com/influxdata/influxdb1-client v0.0.0-20220302092344-a9ab5670611c
+	gopkg.in/h2non/gock.v1 v1.1.2
+	gopkg.in/yaml.v2 v2.4.0
+)
+
+require (
+	github.com/h2non/parth v0.0.0-20190131123155-b4df798d6542 // indirect
+	github.com/mattn/go-colorable v0.1.13 // indirect
+	github.com/mattn/go-isatty v0.0.20 // indirect
+	github.com/shopspring/decimal v1.3.1 // indirect
+	golang.org/x/sys v0.13.0 // indirect
 )

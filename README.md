@@ -51,6 +51,11 @@ In order for all features to be supported, the Kapacitor version running the tes
  $ kapacitor-unit
 ```
 
+**Building a docker container:**
+```
+$ docker build -t kapacitor-unit .
+```
+
 **Running from source without rebuilding:**
 ```
  $ go run ./cmd/kapacitor-unit/main.go
@@ -130,6 +135,17 @@ tests:
 Note that `now() - 30m + 1m` relative influx timestamps can be used in batch data;
 the only usage requirement is that `now()` needs to start the dynamic timestamp.
 This currently only supports hours `h`, minute `m`, and seconds `s`.
+
+### Pushing the container image to a container registry
+By default it pushes the latest tag to **andrianjardana1/kapacitor-unit:latest** when 
+you run:
+```
+$ make push_to_registry
+```
+but it can be adjusted by running:
+```
+$ make push_to_registry TAG=<YOUR_TAG> PLATFORMS=<comma,separated,list,of,platforms>
+```
 
 ### Debugging
 

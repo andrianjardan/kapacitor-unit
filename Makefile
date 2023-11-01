@@ -11,6 +11,9 @@ DOCKER_PARAMS=\
   --env GOCACHE=/tmp/.cache \
   --network host
 
+PLATFORMS?=linux/arm/v6,linux/arm/v7,linux/arm64,linux/amd64
+TAG?=andrianjardana1/kapacitor-unit:latest
+
 travis-ci-setup:
 	go get ./cmd/kapacitor-unit ./io ./task ./test
 
@@ -51,3 +54,6 @@ sample_dir: build
 	docker run -it $(DOCKER_PARAMS) $(GOLANG_IMAGE) \
 	  ./main -dir ./sample/tick_scripts \
 	         -tests ./sample/test_cases
+push_to_registry:
+	docker buildx build --push --platform ${PLATFORMS} \
+	--tag ${TAG} .
